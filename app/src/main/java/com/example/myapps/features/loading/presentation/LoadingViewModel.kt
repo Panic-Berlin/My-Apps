@@ -18,7 +18,7 @@ class LoadingViewModel @Inject constructor(): ViewModel() {
 
     val goToStartFragment = SingleLiveEvent<Unit>()
 
-    fun startLoading(){
+    init{
         _isLoading.value = true
         viewModelScope.launch {
             loading()

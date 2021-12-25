@@ -16,7 +16,9 @@
             app:enterAnim="@anim/fade_in"
             app:exitAnim="@anim/fade_out"
             app:popEnterAnim="@anim/fade_in"
-            app:popExitAnim="@anim/fade_out" />
+            app:popExitAnim="@anim/fade_out"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/loadingFragment"/>
     </fragment>
     <fragment
         android:id="@+id/startFragment"

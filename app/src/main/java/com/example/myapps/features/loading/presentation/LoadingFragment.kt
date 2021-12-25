@@ -5,6 +5,7 @@ import android.view.View
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.myapps.R
@@ -21,18 +22,13 @@ class LoadingFragment: Fragment(R.layout.fragment_loading) {
         super.onViewCreated(view, savedInstanceState)
 
         observe()
-        initViews()
     }
 
-    private fun initViews() {
-
-    }
 
     private fun observe() {
         viewModel.isLoading.observe(viewLifecycleOwner){
             viewBinding.cpiLoading.isVisible = it
         }
-        viewModel.startLoading()
         viewModel.goToStartFragment.observe(viewLifecycleOwner){
             val navigate = LoadingFragmentDirections.actionLoadingFragmentToStartFragment()
             findNavController().navigate(navigate)
